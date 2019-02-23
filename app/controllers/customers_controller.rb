@@ -1,7 +1,7 @@
 class CustomersController < ApplicationController
 
   def index
-    @customers = Customer.all
+    @customers = Customer.all.order(name: :desc)
   end
 
   def new
@@ -21,6 +21,6 @@ class CustomersController < ApplicationController
   private
 
   def customer_params
-    params.require(:customer).permit(:name, :address_1, :adress_2, :state, :postal, :phone_1, :phone_2, :xcord, :ycord, :notes)
+    params.require(:customer).permit(:name, :address_1, :address_2, :city, :postal, :state, :country, :phone_1, :phone_2, :xcord, :ycord, :notes)
   end
 end

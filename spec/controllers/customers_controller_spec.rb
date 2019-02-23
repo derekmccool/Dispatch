@@ -19,13 +19,15 @@ RSpec.describe CustomersController, type: :controller do
 
   describe "customers#create action" do
     it "should successfully add a new customer to the datable" do
-      post :create, params: { customer: {name: 'Metrie' , address_1: "123 St", state: "BC", postal:"12345"}}
+      post :create, params: { customer: {name: 'Metrie' , address_1: "123 St", state: "BC", postal:"12345", city: "Surrey", country: "CA"}}
       expect(response).to redirect_to root_path
 
       customer = Customer.last
       expect(customer.name).to eq('Metrie')
       expect(customer.address_1).to eq('123 St')
       expect(customer.state).to eq('BC')
+      expect(customer.city).to eq('Surrey')
+      expect(customer.country).to eq('CA')
       expect(customer.postal).to eq('12345')
     end
 

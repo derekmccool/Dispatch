@@ -1,0 +1,2 @@
+class Probill < ApplicationRecord
+end

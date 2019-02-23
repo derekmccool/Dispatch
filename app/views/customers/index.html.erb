@@ -1,1 +1,27 @@
 <h1>Customers</h1>
+<table>
+  <thead>
+      <tr>
+        <th>Name</th>
+        <th>Address Line 1</th>
+        <th>Address Line 2</th>
+        <th>City</th>
+        <th>State/Province</th>
+        <th>Postal</th>
+        <th>Country</th>
+      </tr>
+  </thead>
+  <tbody id="customers">
+    <% @customers.each do |t| %>
+      <tr>
+        <td><%= t.name %></td>
+        <td><%= t.address_1 %></td>
+        <td><%= t.address_2%></td>
+        <td><%= t.city %></td>
+        <td><%= t.state %></td>
+        <td><%= t.postal %></td>
+        <td><%= t.country %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
